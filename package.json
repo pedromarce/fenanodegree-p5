@@ -1,0 +1,33 @@
+{
+  "author": "Your Name",
+  "name": "package-name",
+  "description": "Package description",
+  "version": "0.0.1",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "private": true,
+  "engines": {
+    "node": "latest",
+    "npm": "latest"
+  },
+  "scripts": {
+    "postinstall": "bower install --config.interactive=false && cp -r bower_components/bootstrap/fonts app/assets/ && brunch build -P",
+    "start": "brunch watch --server"
+  },
+  "devDependencies": {
+    "before-brunch": "latest",
+    "clean-css-brunch": "latest",
+    "css-brunch": "latest",
+    "javascript-brunch": "latest",
+    "less-brunch": "latest",
+    "lodash-cli": "latest",
+    "read-components": "latest",
+    "uglify-js-brunch": "latest"
+  },
+  "main": "brunch-config.js",
+  "dependencies": {},
+  "license": "MIT"
+}
