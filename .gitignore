@@ -28,7 +28,7 @@ node_modules/
 tmp/
 
 # Brunch output folder.
-public/
+#public/
 
 # Bower stuff.
 bower_components/

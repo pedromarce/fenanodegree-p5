@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Barcelona Neighbourhood map</title>
+
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+		<style>
+			body > .container {
+				display: none;
+			}
+		</style>
+		<div class="alert alert-danger">
+			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.
+		</div>
+	<![endif]-->
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Barcelona</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" data-bind="textInput: searchText">
+                    </div>
+                    <button type="submit" class="btn btn-default" data-bind="click: search">Search</button>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Results <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li data-bind="foreach: places">
+                                <a href="#" data-bind="click: $parent.focusMarker"><span data-bind="text: name"></span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right" role="filter">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Filter" data-bind="textInput: filterText">
+                    </div>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid">
+        <div id="map" class="jumbotron"></div>
+    </div>
+
+    <div class="modal fade more-info-modal" tabindex="-1" role="dialog" aria-labelledby="More Information">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="text-center" data-bind="text: selectedMarker"></h1>
+                </div>
+                <div class="modal-body">
+                    <div id="carousel-instagram" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox" data-bind="foreach: instagramPics">
+                            <div data-bind="attr: {class: css}">
+                                <div class="text-center">
+                                    <img class="instagram" data-bind="attr: { src: link, alt: alt }">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-instagram" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-instagram" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/vendor.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
