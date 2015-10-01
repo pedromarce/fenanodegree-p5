@@ -78,7 +78,10 @@ function appViewModel() {
     return returnArray;
   });
 
-	
+  self.focusMarker = function(result) {
+	markers[result.place_id].select();  	
+  };	
+
   self.search = function () {
     var request = {};
     if (self.searchText() !== '') {
