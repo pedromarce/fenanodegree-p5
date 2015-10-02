@@ -5,4 +5,4 @@
 - Clicking the marker additional information is available showing pictures from instagram for the location.
 - Results can be filtered by adding text in the filter text box.
 - Application uses Brunch to allow to generate a production version available in this branch (gh-pages).
-- Application also available in https://pedromarce.github.com/fenanodegree-p5
+- Application also available in https://pedromarce.github.io/fenanodegree-p5
